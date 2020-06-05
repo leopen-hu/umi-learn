@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useIntl, getLocale, setLocale } from 'umi';
+import umi from 'umi';
 import { Button } from 'antd';
 
 export interface SimpleLangSwitchProps {
@@ -7,6 +8,7 @@ export interface SimpleLangSwitchProps {
 }
 
 export default ({ locales }: SimpleLangSwitchProps) => {
+  console.log(umi, useIntl, getLocale, setLocale);
   const currentLocale = getLocale();
 
   const handleClick = () => {
@@ -14,8 +16,7 @@ export default ({ locales }: SimpleLangSwitchProps) => {
       locale => locale !== currentLocale,
     ) as string;
 
-    setLocale(nextLocale, true);
-    console.log(`currentLang: ${nextLocale}`);
+    setLocale(nextLocale, false);
   };
 
   return (

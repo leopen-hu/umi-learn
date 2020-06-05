@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import SimpleSwitcher from './simpleSwitcher';
-import MultipleSwitcher from './multipleSwitcher';
+import SimpleSwitch from './simpleSwitch';
+import MultipleSwitch from './multipleSwitch';
 import { getAllLocales } from 'umi';
 
 export interface LangSwitchProps {
@@ -17,10 +17,10 @@ export default ({ className }: LangSwitchProps) => {
     case 1:
       break;
     case 2:
-      switcher = <SimpleSwitcher locales={allLocales as [string, string]} />;
+      switcher = <SimpleSwitch locales={allLocales as [string, string]} />;
       break;
     default:
-      switcher = <MultipleSwitcher />;
+      switcher = <MultipleSwitch />;
       break;
   }
 
